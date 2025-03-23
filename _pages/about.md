@@ -4,9 +4,6 @@ title: About
 permalink: /about/
 ---
 
-Here’s a draft for your blog introduction:
-
----
 
 Hello, I’m José Abreu, and I hold a degree in Computer and Network Security (Cybersecurity) from Escola Superior de Tecnologia e Gestão - Instituto Politécnico do Porto. I have a strong passion for Pentesting and Red Team operations, which drives my curiosity and constant learning in the cybersecurity field.
 
