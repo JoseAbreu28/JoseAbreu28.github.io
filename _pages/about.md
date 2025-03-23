@@ -4,26 +4,19 @@ title: About
 permalink: /about/
 ---
 
-[Reverie](https://github.com/amitmerchant1990/reverie) is a Jekyll theme which is simple and opinionated. It's actually a fork of [jekyll-now](https://github.com/barryclark/jekyll-now) with some additional features and personal touches which I've implemented to suit my needs for [my blog](https://www.amitmerchant.com).
+Here’s a draft for your blog introduction:
 
-This is a plug-and-play Jekyll theme which you can use on GitHub Pages without even setting up a local environment.
+---
 
-## Features
+Hello, I’m José Abreu, and I hold a degree in Computer and Network Security (Cybersecurity) from Escola Superior de Tecnologia e Gestão - Instituto Politécnico do Porto. I have a strong passion for Pentesting and Red Team operations, which drives my curiosity and constant learning in the cybersecurity field.
 
-- Command-line free fork-first workflow, using GitHub.com to create, customize and post to your blog
-- Fully responsive and mobile optimized base theme
-- Sass/Coffeescript support using Jekyll 2.0
-- Free hosting on your GitHub Pages user site
-- All the SEO goodies comes in-built
-- Markdown blogging
-- Syntax highlighting using Pygments
-    - [Dracula syntax theme](https://draculatheme.com/) included
-- Disqus commenting
-- Google Analytics integration
-- Fuzzy search across blog posts
-- Pagination of posts works out-of-the-box.
-- Categorize posts out-of-the box
-- RSS Feed
-- In-built sitemap
+Through this blog, I aim to share my personal experiences with various projects that I've had the chance to explore and implement. While many of the projects discussed here were not created by me, I’ll be focusing on my experiences — including the study process, the implementation steps, and what fascinated me the most about each project. My goal is to provide insights, tips, and reflections that might be helpful to others in the cybersecurity community.
 
-Learn more about it [here](https://github.com/amitmerchant1990/reverie) on how to get started.
+## My Certifications
+
+- OffSec Experienced Penetration Tester (OSEP)
+- Certified Red Team Master (CRTM)
+- Offensive Security Certified Professional (OSCP)
+- eLearnsecurity Certified Professional Penetration Tester (eCPPTv2)
+- Web Application Penetration Tester eXtreme  (eWPTXv2)
+- Certified Red Team Professional (CRTP)
