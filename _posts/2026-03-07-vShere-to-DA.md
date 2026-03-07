@@ -1,7 +1,7 @@
 ---
 layout: post
-title: From vSphere Compromise to Domain Admin: Offline NTDS Extraction
-categories: [Pentesting,RedTeam,ActiveDirectory,Vsphere]
+title: "From vSphere Compromise to Domain Admin: Offline NTDS Extraction"
+categories: [Pentesting, RedTeam, ActiveDirectory, Vsphere]
 ---
 
 ## Introduction
