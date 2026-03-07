@@ -19,6 +19,8 @@ At this initial step, I noticed that, in addition to the Virtual Machines tab, t
 
 At this point, a small obstacle appeared: since the Domain Controller was running, it was not possible to directly download the VMDK image. However, vSphere provides a feature that allows quick cloning of virtual machines even while they are running. Therefore, before downloading the disk, I had to create a clone of the Domain Controller.
 
+![Clone](/images/DATA/vsphere_clone.png)
+
 After the successful clone, there were two possible alternatives: download the vmdk and mount the disk on my computer, or create a virtual machine from vSphere, add the extra disk, and mount it on the created VM. 
 
 
@@ -27,10 +29,14 @@ This was the first method I tested, but I quickly realized it was too time-consu
 
 This method consists of downloading the Domain Controller disk to a local machine and mounting it using [OSFMount](https://www.osforensics.com/tools/mount-disk-images.html).
 
+![osfmount](/images/DATA/osf_mount.png)
+
 ### Second method for mounting the disk
 The second method turned out to be much more practical. It consists of creating a new VM in vSphere. Once the VM is created, the machine must be **powered off** in order to modify its hardware configuration. After that, you can edit the VM settings and add the cloned disk by following these steps:
 
 **Add New Device → Existing Hard Disk**
+
+![AddDisk](/images/DATA/vsphere_addDisk.png)
 
 After powering on the VM, the disk will not yet be mounted. To mount it, navigate to:
 
@@ -38,10 +44,14 @@ After powering on the VM, the disk will not yet be mounted. To mount it, navigat
 
 Once the disk appears, select it and choose the **“Bring Online”** option.
 
+![BringOnline](/images/DATA/vsphere_2moment.png)
+
 The disk will then be mounted, allowing access to the file system and enabling the extraction of the **SAM**, **SYSTEM**, and **NTDS.dit** files.
 
 
 ## Conclusion
 Once these files are obtained, it is possible to extract the domain password hashes using secretsdump. From there, compromising the Domain Controller becomes relatively straightforward. In this case, obtaining Domain Admin access required little effort beyond some troubleshooting when mounting and accessing the disk.
+
+![Secretdump](/images/DATA/secretdump.png)
 
 This scenario also raised an interesting question regarding disk protection mechanisms in virtualized environments. Since the VMDK could be accessed and mounted offline, I became curious about the available disk encryption mechanisms for virtual machines, and how technologies such as VM or datastore encryption could help mitigate this type of attack when an attacker gains access to the hypervisor.
