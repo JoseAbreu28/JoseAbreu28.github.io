@@ -61,7 +61,7 @@ This scenario also raised an interesting question regarding disk protection mech
 ## Remediations
 To protect virtual machines from offline attacks, vSphere provides VM and disk encryption using a Key Management Server (KMS). Even with administrator access to vSphere, an attacker cannot download or mount the VMDK without the encryption keys. 
 
-- **Encrypt an Existing Virtual Machine or Virtual Disk** - [Ref1](https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/7-0/vsphere-security/use-encryption-in-your-vsphere-environment/encrypt-an-existing-virtual-machine-or-virtual-disk.html)
-- **VMWARE vSPHERE VIRTUAL MACHINE ENCRYPTION PERFORMANCE** - [Ref2](https://www.vmware.com/docs/vm-encryption-vsphere65-perf)
+- [**Encrypt an Existing Virtual Machine or Virtual Disk**](https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/7-0/vsphere-security/use-encryption-in-your-vsphere-environment/encrypt-an-existing-virtual-machine-or-virtual-disk.html)
+- [**VMWARE vSPHERE VIRTUAL MACHINE ENCRYPTION PERFORMANCE**](https://www.vmware.com/docs/vm-encryption-vsphere65-perf)
 
 
