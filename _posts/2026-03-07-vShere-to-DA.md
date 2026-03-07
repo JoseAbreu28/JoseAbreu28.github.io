@@ -31,6 +31,8 @@ This method consists of downloading the Domain Controller disk to a local machin
 
 ![osfmount](/images/DATA/osf_mount.png)
 
+![CopyFiles](/images/DATA/COPY.png)
+
 ### Second method for mounting the disk
 The second method turned out to be much more practical. It consists of creating a new VM in vSphere. Once the VM is created, the machine must be **powered off** in order to modify its hardware configuration. After that, you can edit the VM settings and add the cloned disk by following these steps:
 
