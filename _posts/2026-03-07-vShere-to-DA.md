@@ -57,3 +57,11 @@ Once these files are obtained, it is possible to extract the domain password has
 ![Secretdump](/images/DATA/secretdump.png)
 
 This scenario also raised an interesting question regarding disk protection mechanisms in virtualized environments. Since the VMDK could be accessed and mounted offline, I became curious about the available disk encryption mechanisms for virtual machines, and how technologies such as VM or datastore encryption could help mitigate this type of attack when an attacker gains access to the hypervisor.
+
+## Remediations
+To protect virtual machines from offline attacks, vSphere provides VM and disk encryption using a Key Management Server (KMS). Even with administrator access to vSphere, an attacker cannot download or mount the VMDK without the encryption keys. 
+
+- **Encrypt an Existing Virtual Machine or Virtual Disk** - [Ref1](https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/7-0/vsphere-security/use-encryption-in-your-vsphere-environment/encrypt-an-existing-virtual-machine-or-virtual-disk.html)
+- **VMWARE vSPHERE VIRTUAL MACHINE ENCRYPTION PERFORMANCE** - [Ref2](https://www.vmware.com/docs/vm-encryption-vsphere65-perf)
+
+
