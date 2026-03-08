@@ -7,7 +7,7 @@ categories: [Pentesting, RedTeam, ActiveDirectory, Vsphere]
 ## Introduction
 During an internal penetration test, I obtained administrator access to the vSphere environment. While enumerating the virtual machines, I discovered that one of them hosted the Active Directory Domain Controller. With administrative privileges on the hypervisor, cloning the Domain Controller can lead to full compromise of the domain and Domain Admin access.
 
-## Overview 
+## Attack Scenario
 In this article, I aim to present the approach I followed during the engagement and the reasoning behind it. During an internal penetration test against an Active Directory infrastructure, it was possible to obtain administrator credentials for the vSphere platform. I first tested these credentials against domain accounts, but they were not valid; they only provided administrative access to the virtualization platform. However, as will be shown, having control over the hypervisor can open the door to compromising the underlying Active Directory environment. 
 
 
