@@ -8,7 +8,7 @@ categories: [Pentesting, RedTeam, ActiveDirectory, Vsphere]
 During an internal penetration test, I obtained administrator access to the vSphere environment. While enumerating the virtual machines, I discovered that one of them hosted the Active Directory Domain Controller. With administrative privileges on the hypervisor, cloning the Domain Controller can lead to full compromise of the domain and Domain Admin access.
 
 ## Overview 
-In this article, I aim to present the approach I followed during the engagement and the reasoning behind it. During an internal penetration test against an Active Directory infrastructure, it was possible to obtain administrator credentials for the vSphere platform. I first tested these credentials against domain accounts, but they were not valid; they only provided administrative access to the virtualization platform. However, as will be shown, having control over the hypervisor can still open the door to compromising the underlying Active Directory environment. 
+In this article, I aim to present the approach I followed during the engagement and the reasoning behind it. During an internal penetration test against an Active Directory infrastructure, it was possible to obtain administrator credentials for the vSphere platform. I first tested these credentials against domain accounts, but they were not valid; they only provided administrative access to the virtualization platform. However, as will be shown, having control over the hypervisor can open the door to compromising the underlying Active Directory environment. 
 
 
 ## Initial Enumeration 
@@ -58,8 +58,13 @@ Once these files are obtained, it is possible to extract the domain password has
 
 This scenario also raised an interesting question regarding disk protection mechanisms in virtualized environments. Since the VMDK could be accessed and mounted offline, I became curious about the available disk encryption mechanisms for virtual machines, and how technologies such as VM or datastore encryption could help mitigate this type of attack when an attacker gains access to the hypervisor.
 
-## Remediations
-To protect virtual machines from offline attacks, vSphere provides VM and disk encryption using a Key Management Server (KMS). Even with administrator access to vSphere, an attacker cannot download or mount the VMDK without the encryption keys. 
+## Remediation
+
+Compromising the vSphere platform already implies administrative control over the virtualization environment. In such a scenario, an attacker can clone or access virtual machine disks directly from the hypervisor.
+
+In this context, one possible mitigation to prevent offline access to sensitive data stored in virtual machine disks is the use of VM encryption. By enabling encryption for the virtual machine or its virtual disks, the contents of the VMDK remain protected even if the disk is cloned or downloaded from the vSphere storage.
+
+This control mainly acts as an additional security layer and may introduce performance overhead or latency depending on the environment and workload.
 
 - [**Encrypt an Existing Virtual Machine or Virtual Disk**](https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/7-0/vsphere-security/use-encryption-in-your-vsphere-environment/encrypt-an-existing-virtual-machine-or-virtual-disk.html)
 - [**VMWARE vSPHERE VIRTUAL MACHINE ENCRYPTION PERFORMANCE**](https://www.vmware.com/docs/vm-encryption-vsphere65-perf)
